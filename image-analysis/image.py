@@ -105,12 +105,17 @@ def start():
     # app.models.create('traffic density', concepts=['high density', 'low density'])
     model = app.models.get('traffic density')
     # model.train()
-    image = Image(url='http://images.indianexpress.com/2015/06/kerb-stone-delhi-759.jpg')
+    image = Image(url='http://img.youtube.com/vi/wAPbYiauHj0/0.jpg')
     data = model.predict([image])
     with open('repo_data.json', 'w') as outfile:
         json.dump(data, outfile)
     print data
-
+    x = data['outputs'][0]['data']['concepts'][0]['value']
+    y = data['outputs'][0]['data']['concepts'][1]['value']
+    if x > y:
+        print 'Conclusion = '+ data['outputs'][0]['data']['concepts'][0]['name']
+    else:
+        print 'Conclusion = ' + data['outputs'][0]['data']['concepts'][1]['name']
     # model = app.models.get('{model_id}')
     # model.train()
 
