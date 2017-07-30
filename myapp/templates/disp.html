@@ -1,15 +1,34 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Analytic</title>
-
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style>
+        td img{
+      display:block; width:100%; height:200px;
+}
+        table{
+            width: 50%;
+            height: 40%;
+            border: 20px;
+        }
+        td{
+            width: 50%;
+            height: 50%;
+        }
+    </style>
 </head>
 <body>
-
-<table border="1" width="80%" >
+<br><br>
+<center>
+<table>
 <tr>
-    <td><img src="{{cam1}}"></td>
+    <td><img src="{{cam1}}" ></td>
     <td><img src="{{cam2}}"></td>
   </tr>
   <tr>
@@ -17,8 +36,9 @@
     <td><img src="{{cam4}}"></td>
   </tr>
 </table>
-
+    </center>
+<h3 align="center">Analysis Report</h3>
+<h4>{{ result }}</h4>
 </body>
-Analysis report
 </html>
 
