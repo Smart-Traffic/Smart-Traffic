@@ -22,7 +22,7 @@ from datetime import datetime
 #     stray = models.BooleanField(default=False)
 
 class Mapp(models.Model):
-    camera_id = models.CharField(max_length=100, primary_key='True')
+    camera_id = models.CharField(max_length=80, primary_key='True')
     light_id = models.CharField(max_length=100,unique='True')
     created_on = models.DateTimeField(auto_now_add=True)
 
