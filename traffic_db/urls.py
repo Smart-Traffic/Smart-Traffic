@@ -19,5 +19,6 @@ from myapp.views import display
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
-    url('display/',display)
+    url('',display),
+    # url('disp/',display_cam)
 ]

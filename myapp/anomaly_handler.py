@@ -2,6 +2,7 @@ from sendgrid.helpers.mail import *
 from datetime import datetime
 from key_sg import *
 import sendgrid
+from views import image
 
 
 
@@ -32,7 +33,7 @@ def anomaly_detection():
     timestamp = datetime.now()
     message = "At **location** there was an accident at Time: " + str(timestamp) + '\n' \
                                                                                    'Please take necessary action soon\n' \
-                                                                                   'Accident Image : %s' %(image_url)
+                                                                                   'Accident Image : %s' %(image)
     content = Content("text/plain", message)
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())

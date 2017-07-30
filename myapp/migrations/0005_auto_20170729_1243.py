@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='crossing1',
             name='created_on',
-            field=models.DateTimeField(auto_now_add=True, default=234),
+            field=models.DateTimeField(auto_now_add=True),
             preserve_default=False,
         ),
         migrations.AlterField(

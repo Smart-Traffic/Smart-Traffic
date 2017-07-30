@@ -6,13 +6,27 @@ from datetime import datetime
 # Create your models here.
 
 
+# class Mapp(models.Model):
+#     camera_id = models.CharField(max_length=100, primary_key='True')
+#     light_id = models.CharField(max_length=100,unique='True')
+#     created_on = models.DateTimeField(auto_now_add=True)
+#
+#
+# class Crossing1(models.Model):
+#     cam = models.ForeignKey(Mapp)
+#     density = models.CharField(max_length=30, default=None)
+
+
+# class Stray1(models.Model):
+#     cam_id = models.ForeignKey(Mapp)
+#     stray = models.BooleanField(default=False)
+
 class Mapp(models.Model):
     camera_id = models.CharField(max_length=100, primary_key='True')
     light_id = models.CharField(max_length=100,unique='True')
-    created_on = models.CharField(max_length=10)
+    created_on = models.DateTimeField(auto_now_add=True)
 
 
 class Crossing1(models.Model):
     cam = models.ForeignKey(Mapp)
-    conclusion = models.CharField(max_length=30, default=None)
-    stray = models.BooleanField(default=False)
+    density = models.CharField(max_length=30, default=None)
