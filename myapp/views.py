@@ -12,22 +12,6 @@ import json
 
 IMAGE_URL = []
 
-# def display(request):
-#     if request.method == 'GET':
-#         # image_url = request.GET['url']
-#         # print image_url
-#         app = image_analyzer(api_key=get_your_own_key)
-#         model = app.models.get('traffic density')
-#         image = Image(url='http://www.dot.ca.gov/cwwp2/data/d4/cctv/image/TV503_W80atCarlson.jpg')
-#         data = model.predict([image])
-#         with open('repo_data.json', 'w') as outfile:
-#             json.dump(data, outfile)
-#         print data
-#         result = data['outputs'][0]['data']['concepts'][0]['name']
-#         # conclusion = Crossing1(density=result)
-#         # conclusion.save()
-#         return render(request, 'success.html')
-
 
 def display(request):
     if request.method == 'GET':
@@ -48,11 +32,6 @@ def display(request):
 def api_call(cam1,cam2,cam3,cam4):
     app = image_analyzer(api_key=get_your_own_key)
     model = app.models.get('traffic density')
-    # images = [
-    #     'https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/mado5ne/high-density-traffic-on-downtown-street-of-moscow_xyx5u3du__F0000.png',
-    #     'https://report.az/storage/news/a1451c765f2344226690c36551b6b29a/39e6afde-526c-42cf-9354-cead17b0d93b.jpg',
-    #     'http://timesofindia.indiatimes.com/thumb/msid-37055677,width-400,resizemode-4/37055677.jpg',
-    #     'http://download-ets2.com/uploads/posts/2015-09/1441462911_ets2_00077.png']
     images = [cam1, cam2, cam3, cam4]
     emergency = {}
     low = {}
